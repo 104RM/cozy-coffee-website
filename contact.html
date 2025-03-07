@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Cozy Coffee</title>
+    <style>
+      :root {
+        --primary-color: #6f4e37;
+        --secondary-color: #c4a484;
+        --accent-color: #d2691e;
+        --text-color: #333;
+        --light-color: #fff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+      }
+
+      nav {
+        background: var(--primary-color);
+        padding: 1rem;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        color: var(--light-color);
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li a {
+        color: var(--light-color);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: var(--secondary-color);
+      }
+
+      .contact-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 6rem 2rem 2rem;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-top: 2rem;
+      }
+
+      .contact-info {
+        padding: 2rem;
+        background: var(--light-color);
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-info h2 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+      }
+
+      .info-item {
+        margin-bottom: 1.5rem;
+      }
+
+      .info-item h3 {
+        color: var(--accent-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .map {
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+      }
+
+      .contact-form {
+        padding: 2rem;
+        background: var(--light-color);
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-form h2 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--text-color);
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      .form-group textarea {
+        height: 150px;
+      }
+
+      button {
+        background: var(--primary-color);
+        color: var(--light-color);
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background: var(--accent-color);
+      }
+
+      .social-newsletter {
+        margin-top: 3rem;
+        text-align: center;
+      }
+
+      .social-links {
+        margin-bottom: 2rem;
+      }
+
+      .social-links a {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        margin: 0 1rem;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .social-links a:hover {
+        color: var(--accent-color);
+      }
+
+      .newsletter {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .newsletter h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .newsletter-form {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .newsletter-form input {
+        flex: 1;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Cozy Coffee</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="signup_login.html">Sign up</a></li>
+      </ul>
+    </nav>
+
+    <div class="contact-container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <div class="info-item">
+            <h3>Location</h3>
+            <iframe
+              class="map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM0LCsDEyJzEyLjAiTiA3McKwMzQnMzAuMCJX!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+              allowfullscreen=""
+              title="Cozy Coffee shop location map"
+            ></iframe>
+            <p>123 Coffee Street, Beantown, ST 12345</p>
+          </div>
+          <div class="info-item">
+            <h3>Hours</h3>
+            <p>Monday - Friday: 6:00 AM - 8:00 PM</p>
+            <p>Saturday - Sunday: 7:00 AM - 9:00 PM</p>
+          </div>
+          <div class="info-item">
+            <h3>Contact</h3>
+            <p>Phone: (555) 123-4567</p>
+            <p>Email: info@cozycoffee.com</p>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h2>Send us a Message</h2>
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="social-newsletter">
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i>Facebook</a>
+          <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
+          <a href="#"><i class="fab fa-twitter"></i>X</a>
+          <a href="#"><i class="fab fa-pinterest"></i>Pinterest</a>
+        </div>
+
+        <div class="newsletter">
+          <h3>Subscribe to Our Newsletter</h3>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/your-font-awesome-kit.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

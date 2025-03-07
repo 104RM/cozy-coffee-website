@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details - Cozy Coffee</title>
+    <style>
+      :root {
+        --primary-color: #6f4e37;
+        --secondary-color: #c4a484;
+        --accent-color: #d2691e;
+        --text-color: #333;
+        --light-color: #fff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+      }
+
+      nav {
+        background: var(--primary-color);
+        padding: 1rem;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        color: var(--light-color);
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+      nav ul li a {
+        color: var(--light-color);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        transition: 0.3s;
+      }
+      nav ul li a:hover {
+        color: var(--secondary-color);
+      }
+
+      .product-container {
+        max-width: 1200px;
+        padding: 6rem 2rem;
+        animation: fadeIn 1s ease-in;
+      }
+
+      .product-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-top: 2rem;
+      }
+
+      .product-image {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .product-info {
+        padding: 1rem;
+      }
+
+      .product-title {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .product-description {
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+      }
+
+      .price {
+        font-size: 1.5rem;
+        color: var(--accent-color);
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+
+      .ingredients {
+        margin-bottom: 2rem;
+      }
+
+      .ingredients h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .ingredients ul {
+        list-style: none;
+      }
+
+      .ingredients li {
+        margin-bottom: 0.5rem;
+      }
+
+      .customization {
+        margin-bottom: 2rem;
+      }
+
+      .customization h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .options-group {
+        margin-bottom: 1rem;
+      }
+
+      .options-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .options-group select {
+        width: 200px;
+        padding: 0.5rem;
+        border: 1px solid var(--secondary-color);
+        border-radius: 5px;
+      }
+
+      .quantity-selector {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .quantity-btn {
+        padding: 0.5rem 1rem;
+        background: var(--secondary-color);
+        border: none;
+        color: var(--light-color);
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .quantity {
+        padding: 0.5rem 2rem;
+        margin: 0 1rem;
+      }
+
+      .add-to-cart {
+        padding: 1rem 2rem;
+        background: var(--accent-color);
+        color: var(--light-color);
+        border: none;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .add-to-cart:hover {
+        background: var(--primary-color);
+        transform: scale(1.05);
+      }
+
+      .reviews {
+        margin-top: 3rem;
+      }
+
+      .reviews h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .review-card {
+        background: var(--light-color);
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .review-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+      }
+
+      .stars {
+        color: var(--accent-color);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Cozy Coffee</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="signup_login.html">Sign up</a></li>
+      </ul>
+    </nav>
+
+    <div class="product-container">
+      <div class="product-details">
+        <div class="product-image">
+          <img
+            src="https://images.unsplash.com/photo-1608735484399-b7ec8f9945c1?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Espresso"
+          />
+        </div>
+        <div class="product-info">
+          <h1 class="product-title">Espresso</h1>
+          <p class="product-description">
+            Our signature espresso is crafted with precision using premium,
+            hand-selected coffee beans. Each shot is expertly pulled to create a
+            rich, bold flavor with a perfect crema.
+          </p>
+          <p class="price">$3.50</p>
+
+          <div class="ingredients">
+            <h3>Ingredients</h3>
+            <ul>
+              <li>Premium Arabica Coffee Beans</li>
+              <li>Filtered Water</li>
+            </ul>
+          </div>
+
+          <div class="customization">
+            <h3>Customize Your Drink</h3>
+            <div class="options-group">
+              <label for="size">Size</label>
+              <select id="size">
+                <option value="single">Single Shot</option>
+                <option value="double">Double Shot</option>
+                <option value="triple">Triple Shot</option>
+              </select>
+            </div>
+
+            <div class="options-group">
+              <label for="temperature">Temperature</label>
+              <select id="temperature">
+                <option value="hot">Hot</option>
+                <option value="extra-hot">Extra Hot</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="quantity-selector">
+            <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+            <span class="quantity">1</span>
+            <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+          </div>
+
+          <button class="add-to-cart" href="cart.html">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="reviews">
+        <h3>Customer Reviews</h3>
+        <div class="review-card">
+          <div class="review-header">
+            <strong>John D.</strong>
+            <div class="stars">★★★★★</div>
+          </div>
+          <p>
+            Perfect espresso! The crema was beautiful and the taste was rich and
+            smooth.
+          </p>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <strong>Sarah M.</strong>
+            <div class="stars">★★★★☆</div>
+          </div>
+          <p>Great flavor but could be a bit hotter. Overall very satisfied!</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function increaseQuantity() {
+        const quantityElement = document.querySelector(".quantity");
+        let quantity = parseInt(quantityElement.textContent);
+        quantityElement.textContent = quantity + 1;
+      }
+
+      function decreaseQuantity() {
+        const quantityElement = document.querySelector(".quantity");
+        let quantity = parseInt(quantityElement.textContent);
+        if (quantity > 1) {
+          quantityElement.textContent = quantity - 1;
+        }
+      }
+    </script>
+  </body>
+</html>

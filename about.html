@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Cozy Coffee</title>
+    <style>
+      :root {
+        --primary-color: #6f4e37;
+        --secondary-color: #b87e5c;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+      }
+
+      nav {
+        background-color: var(--primary-color);
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+      }
+
+      .about-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 2rem;
+      }
+
+      .brand-story {
+        background: white;
+        padding: 3rem;
+        border-radius: 10px;
+        margin-bottom: 3rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .brand-story h1 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-size: 2.5rem;
+      }
+
+      .brand-story p {
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+
+      .team-section {
+        background: white;
+        padding: 3rem;
+        border-radius: 10px;
+        margin-bottom: 3rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .team-section h2 {
+        color: var(--primary-color);
+        margin-bottom: 2rem;
+        font-size: 2rem;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .team-member {
+        text-align: center;
+      }
+
+      .team-member img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+        object-fit: cover;
+      }
+
+      .sustainability {
+        background: white;
+        padding: 3rem;
+        border-radius: 10px;
+        margin-bottom: 3rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .sustainability h2 {
+        color: var(--primary-color);
+        margin-bottom: 2rem;
+        font-size: 2rem;
+      }
+
+      .sustainability-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .commitment {
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .commitment i {
+        font-size: 2.5rem;
+        color: var(--secondary-color);
+        margin-bottom: 1rem;
+      }
+
+      .social-press {
+        background: white;
+        padding: 3rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .social-press h2 {
+        color: var(--primary-color);
+        margin-bottom: 2rem;
+        font-size: 2rem;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .social-btn {
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        background: var(--primary-color);
+        color: white;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .social-btn:hover {
+        background: var(--secondary-color);
+      }
+
+      .press-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .press-item {
+        text-align: center;
+        padding: 1.5rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      .press-item img {
+        max-width: 150px;
+        margin-bottom: 1rem;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Cozy Coffee</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="about-container">
+      <section class="brand-story">
+        <h1>Our Story</h1>
+        <p>
+          Founded in 2015, Cozy Coffee began with a simple mission: to create a
+          warm, welcoming space where quality coffee meets community. What
+          started as a small corner café has grown into a beloved local
+          institution, serving carefully crafted beverages and fostering
+          meaningful connections.
+        </p>
+        <p>
+          Our passion for coffee goes beyond just serving drinks - we're
+          dedicated to sourcing the finest beans, supporting local farmers, and
+          creating sustainable relationships throughout our supply chain.
+        </p>
+      </section>
+
+      <section class="team-section">
+        <h2>Meet Our Team</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <img
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Sarah Johnson"
+            />
+            <h3>Sarah Johnson</h3>
+            <p>Master Barista</p>
+          </div>
+          <div class="team-member">
+            <img
+              src="https://images.unsplash.com/photo-1545184180-25d471fe75eb?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Mike Chen"
+            />
+            <h3>Mike Chen</h3>
+            <p>Head Roaster</p>
+          </div>
+          <div class="team-member">
+            <img
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Emma Davis"
+            />
+            <h3>Emma Davis</h3>
+            <p>Café Manager</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sustainability">
+        <h2>Our Commitment to Sustainability</h2>
+        <div class="sustainability-grid">
+          <div class="commitment">
+            <i class="fas fa-leaf"></i>
+            <h3>Eco-Friendly Packaging</h3>
+            <p>100% compostable cups and recyclable materials</p>
+          </div>
+          <div class="commitment">
+            <i class="fas fa-hands-helping"></i>
+            <h3>Fair Trade</h3>
+            <p>Direct partnerships with coffee farmers</p>
+          </div>
+          <div class="commitment">
+            <i class="fas fa-recycle"></i>
+            <h3>Zero Waste</h3>
+            <p>Composting program and minimal waste initiatives</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="social-press">
+        <h2>Connect With Us</h2>
+        <div class="social-links">
+          <a href="#" class="social-btn">
+            <i class="fab fa-facebook"></i>
+            Facebook
+          </a>
+          <a href="#" class="social-btn">
+            <i class="fab fa-instagram"></i>
+            Instagram
+          </a>
+          <a href="#" class="social-btn">
+            <i class="fab fa-twitter"></i>
+            Twitter
+          </a>
+        </div>
+
+        <h2>Press Features</h2>
+        <div class="press-features">
+          <div class="press-item">
+            <img src="images/press-1.png" alt="Local Times" />
+            <h3>Local Times</h3>
+            <p>"Best Coffee Shop 2023"</p>
+          </div>
+          <div class="press-item">
+            <img src="images/press-2.png" alt="Food Magazine" />
+            <h3>Food Magazine</h3>
+            <p>"Top 10 Sustainable Cafés"</p>
+          </div>
+          <div class="press-item">
+            <img src="images/press-3.png" alt="City Guide" />
+            <h3>City Guide</h3>
+            <p>"Must-Visit Coffee Spots"</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Cozy Coffee</title>
+    <style>
+      :root {
+        --primary-color: #6f4e37;
+        --secondary-color: #c4a484;
+        --accent-color: #d2691e;
+        --text-color: #333;
+        --light-color: #fff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background: #f5f5f5;
+        padding-top: 80px;
+      }
+
+      nav {
+        background: var(--primary-color);
+        padding: 1rem;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        color: var(--light-color);
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li a {
+        color: var(--light-color);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        transition: 0.3s;
+      }
+
+      .checkout-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+      }
+
+      .checkout-form {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-section {
+        margin-bottom: 2rem;
+      }
+
+      .form-section h2 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .form-group {
+        margin-bottom: 1rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+      }
+
+      .radio-label {
+        padding: 0.8rem;
+        font-size: 1rem;
+      }
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        /* width: 100%; */
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+
+      .contact-info input,
+      .delivery-address input {
+        width: 100% !important;
+      }
+
+      .order-summary {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        height: fit-content;
+      }
+
+      .order-summary h2 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .summary-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      .total {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 2px solid #eee;
+      }
+
+      .payment-methods {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .payment-method {
+        border: 1px solid #ddd;
+        padding: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .payment-method:hover {
+        border-color: var(--primary-color);
+      }
+
+      .payment-method.selected {
+        border-color: var(--primary-color);
+        background: #f8f8f8;
+      }
+
+      .place-order-btn {
+        background: var(--primary-color);
+        color: white;
+        padding: 1rem;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .place-order-btn:hover {
+        background: var(--accent-color);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Cozy Coffee</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+
+    <div class="checkout-container">
+      <div class="checkout-form">
+        <div class="form-section">
+          <h2>Delivery Method</h2>
+          <div class="form-group">
+            <label class="radio-label">
+              <input
+                type="radio"
+                name="delivery-method"
+                value="delivery"
+                checked
+              />
+              Delivery
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="delivery-method" value="pickup" />
+              Pickup
+            </label>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="contact-info">
+            <h2>Contact Information</h2>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" required />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section delivery-address">
+          <h2>Delivery Address</h2>
+          <div class="form-group">
+            <label for="street">Street Address</label>
+            <input type="text" id="street" required />
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" required />
+          </div>
+          <div class="form-group">
+            <label for="zip">ZIP Code</label>
+            <input type="text" id="zip" required />
+          </div>
+        </div>
+
+        <div class="form-section payment-details">
+          <h2>Payment Details</h2>
+          <div class="payment-methods">
+            <div class="payment-method selected">
+              <img src="credit-card-icon.png" alt="Credit Card" />
+              <span>Credit Card</span>
+            </div>
+            <div class="payment-method">
+              <img src="paypal-icon.png" alt="PayPal" />
+              <span>PayPal</span>
+            </div>
+          </div>
+          <div id="card-element">
+            <!-- Stripe Card Element will be inserted here -->
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h2>Order Notes</h2>
+          <div class="form-group">
+            <textarea
+              rows="3"
+              placeholder="Any special instructions?"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-summary">
+        <h2>Order Summary</h2>
+        <div class="summary-item">
+          <span>Espresso x2</span>
+          <span>$7.00</span>
+        </div>
+        <div class="summary-item">
+          <span>Latte x1</span>
+          <span>$4.50</span>
+        </div>
+        <div class="summary-item">
+          <span>Subtotal</span>
+          <span>$11.50</span>
+        </div>
+        <div class="summary-item">
+          <span>Delivery Fee</span>
+          <span>$2.00</span>
+        </div>
+        <div class="summary-item">
+          <span>Tax</span>
+          <span>$1.08</span>
+        </div>
+        <div class="total">
+          <span>Total</span>
+          <span>$14.58</span>
+        </div>
+        <button
+          class="place-order-btn"
+          onclick="window.location.href='order.html'"
+        >
+          Place Order
+        </button>
+      </div>
+    </div>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+      // Initialize Stripe
+      const stripe = Stripe("your_publishable_key");
+      const elements = stripe.elements();
+      const card = elements.create("card");
+      card.mount("#card-element");
+
+      // Handle form submission
+      document
+        .querySelector(".place-order-btn")
+        .addEventListener("click", async (e) => {
+          e.preventDefault();
+
+          const { paymentMethod, error } = await stripe.createPaymentMethod({
+            type: "card",
+            card: card,
+          });
+
+          if (error) {
+            // Handle error
+            console.error(error);
+          } else {
+            // Send paymentMethod.id to your server
+            // Process payment on server side
+            console.log("Payment successful!", paymentMethod);
+          }
+        });
+
+      // Toggle delivery/pickup sections
+      document
+        .querySelectorAll('input[name="delivery-method"]')
+        .forEach((input) => {
+          input.addEventListener("change", (e) => {
+            const deliveryAddress = document.querySelector(".delivery-address");
+            if (e.target.value === "delivery") {
+              deliveryAddress.style.display = "block";
+            } else {
+              deliveryAddress.style.display = "none";
+            }
+          });
+        });
+
+      // Toggle payment methods
+      document.querySelectorAll(".payment-method").forEach((method) => {
+        method.addEventListener("click", () => {
+          document
+            .querySelectorAll(".payment-method")
+            .forEach((m) => m.classList.remove("selected"));
+          method.classList.add("selected");
+        });
+      });
+    </script>
+  </body>
+</html>
